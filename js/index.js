@@ -19,7 +19,8 @@ window.onload = function() {
 
                     }
                 })
-            }
+            };
+
 
 
 
@@ -33,7 +34,37 @@ window.onload = function() {
             //  2. vérifier que le 'username' fait au moins 5 caracteres alphanumérique
             //  3. vérifier que le password fait au moins 8 caracteres et contient a minima une majuscule/minuscule ainsi qu'un entier (integer)
 
+        //  d'abord viser le bouton sur lequel on va recup les infos
+        
 
+
+
+     //ESSAI  
+     
+     //     const squareButton = document.querySelectorAll(".square-button");
+        // const input = document.querySelectorAll(".form-control").value;
+
+        // for( let i = 0; i<input.length; i++){
+        //     squareButton[i].addEventListener("click", function(e){
+
+
+        //     })
+        // }
+
+// var validation = document.getElementById("boutonenvoi");
+// validation.addEventListener("click")
+
+// this.document.forms["connexion-form"].addEventListener("submit", function(e){
+// var erreur;
+// var inputs = this;
+// for(var i = 0; i<inputs.length; i++){
+//     console.log(inputs[i]);
+//     if(!inputs[i].value){
+//         erreur = "veuillez rensigner";
+//     }
+// }
+
+// });
 
 
 
