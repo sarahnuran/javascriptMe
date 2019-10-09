@@ -35,7 +35,30 @@ window.onload = function() {
             //  3. vérifier que le password fait au moins 8 caracteres et contient a minima une majuscule/minuscule ainsi qu'un entier (integer)
 
         //  d'abord viser le bouton sur lequel on va recup les infos
+        const envoi1 = document.querySelector("#envoi1");
+        const envoi2 = document.querySelector("#envoi2");
         
+        // je vise la ou je vais recup les infos
+        const inputs = document.querySelectorAll(".form-control");
+
+        // 1ere recup
+        for (let i = 0; i<inputs.length; i++){
+            envoi1.addEventListener("click", function(e){
+                let form = inputs[i].value;
+            console.log(form);
+            }
+            )};
+
+            // 2eme 
+            for (let i = 0; i<inputs.length; i++){
+                envoi2.addEventListener("click", function(e){
+                    let form = inputs[i].value;
+                console.log(form);
+                }
+                )};
+
+
+            
 
 
 
