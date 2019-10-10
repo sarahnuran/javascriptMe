@@ -42,20 +42,96 @@ window.onload = function() {
         const inputs = document.querySelectorAll(".form-control");
 
         // 1ere recup
-        for (let i = 0; i<inputs.length; i++){
-            envoi1.addEventListener("click", function(e){
-                let form = inputs[i].value;
-            console.log(form);
-            }
-            )};
+        envoi1.addEventListener("click", function(e){
+        
+            const logIn = inputs[0].value;
+            const log = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+            if (log.test(logIn)==false)
+                {
+                    alert("You have entered an invalid email address!");
+                    return (false);
+                }
+                console.log(logIn)
+                   
+
+            const mdp = inputs[1].value;
+            const pwd = /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])/;
+            if (pwd.test(mdp)==false) 
+                {
+                    alert("Password Should contain atleast 8 characters, One Number, One UpperCase and a lowercase letter");   
+                    return (false);  
+                }
+                console.log(mdp)
+                          
+        })
+            
+
+        // 2eme recup
+        envoi2.addEventListener("click", function(e){
+        
+            const username = inputs[2].value;
+            if (username.length < 5) {
+                alert("Username should contain minimum of 5 characters");
+                return false;}
+                console.log(username);
+
+                const email = inputs[3].value;
+            const valide = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+            if (valide.test(email)==false)
+                {
+                    alert("You have entered an invalid email address!");
+                    return (false);
+                }          
+                console.log(email);
+
+               
+                const mdp = inputs[4].value;
+            const pwd = /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])/;
+            if (pwd.test(mdp)==false) 
+                {
+                    alert("Password Should contain atleast 8 characters, One Number, One UpperCase and a lowercase letter");   
+                    return (false);  
+                }
+                console.log(mdp);
+
+                const secondmdp = inputs[5].value;
+            if (secondmdp != mdp) 
+                {
+                    alert("Passwords are differents");
+                    return false;
+                }
+                console.log(secondmdp);
+
+
+
+
+
+            })
+
+
+
+            // for (let i = 0; i<inputs.length; i++){
+            
+            //     let form = inputs[i].value;
+            // console.log(form);
+            // }
+            
+
+            
 
             // 2eme 
-            for (let i = 0; i<inputs.length; i++){
-                envoi2.addEventListener("click", function(e){
-                    let form = inputs[i].value;
-                console.log(form);
-                }
-                )};
+            // for (let i = 0; i<inputs.length; i++){
+            //     envoi2.addEventListener("click", function(e){
+            //         let form = inputs[i].value;
+            //     // console.log(form);
+
+            //     var userName = document.querySelector("#userName").value;
+            //     if (userName.length < 5) {
+            //         alert("Password should contain minimum f characters");
+            //        return false;
+            //     }
+            //     }
+            //     )};
 
 
             
