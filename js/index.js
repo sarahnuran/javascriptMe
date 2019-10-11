@@ -34,7 +34,33 @@ window.onload = function() {
             //  2. vérifier que le 'username' fait au moins 5 caracteres alphanumérique
             //  3. vérifier que le password fait au moins 8 caracteres et contient a minima une majuscule/minuscule ainsi qu'un entier (integer)
 
-        //  d'abord viser le bouton sur lequel on va recup les infos
+       
+            class User{
+
+
+                constructor(username, email, password){
+                    this.username = username;
+                    this.email = email;
+                    this.password = password;
+                    
+
+                    } 
+                
+
+                    getUsername(){return this.username}
+                    getEmail(){return this.email}
+                    getPassword(){return this.password}
+
+                    }   
+
+                    // var user = new User('Toto', 'toto@email.fr', 'tamereenslip');
+                    // console.log('Bonjour ' + user.getUsername() + ' !');
+
+       
+
+       
+       
+            //  d'abord viser le bouton sur lequel on va recup les infos
         const envoi1 = document.querySelector("#envoi1");
         const envoi2 = document.querySelector("#envoi2");
         
@@ -49,7 +75,7 @@ window.onload = function() {
             if (log.test(logIn)==false)
                 {
                     alert("You have entered an invalid email address!");
-                    return (false);
+                    // return (false);
                 }
                 console.log(logIn)
                    
@@ -59,9 +85,17 @@ window.onload = function() {
             if (pwd.test(mdp)==false) 
                 {
                     alert("Password Should contain atleast 8 characters, One Number, One UpperCase and a lowercase letter");   
-                    return (false);  
+                    // return (false);  
                 }
-                console.log(mdp)
+                console.log(mdp);
+
+                var user = localStorage.getItem("user");
+                user = JSON.parse(user);
+                if (user.email == logIn && user.password == mdp){
+                    window.location.href="home.html"
+                }
+                console.log(user);
+
                           
         })
             
@@ -72,7 +106,8 @@ window.onload = function() {
             const username = inputs[2].value;
             if (username.length < 5) {
                 alert("Username should contain minimum of 5 characters");
-                return false;}
+                // return false;
+            }
                 console.log(username);
 
                 const email = inputs[3].value;
@@ -80,7 +115,7 @@ window.onload = function() {
             if (valide.test(email)==false)
                 {
                     alert("You have entered an invalid email address!");
-                    return (false);
+                    // return (false);
                 }          
                 console.log(email);
 
@@ -90,7 +125,7 @@ window.onload = function() {
             if (pwd.test(mdp)==false) 
                 {
                     alert("Password Should contain atleast 8 characters, One Number, One UpperCase and a lowercase letter");   
-                    return (false);  
+                    // return (false);  
                 }
                 console.log(mdp);
 
@@ -98,11 +133,15 @@ window.onload = function() {
             if (secondmdp != mdp) 
                 {
                     alert("Passwords are differents");
-                    return false;
+                    // return false;
                 }
                 console.log(secondmdp);
 
+               
+                var user = new User(username, email, mdp);
+                localStorage.setItem("user", JSON.stringify(user));
 
+                // console.log(user);
 
 
 
@@ -184,7 +223,9 @@ window.onload = function() {
             // --> on utilise les données saisie du formulaire d'inscription pour setup les propriétés notre nouvelle 'User'
             // puis on stocke ce nouvelle objet utilisateurs dans le 'localStorage' sous la clé 'user'
 
-
+           
+                
+                    
 
 
 

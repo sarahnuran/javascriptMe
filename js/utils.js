@@ -16,3 +16,22 @@ function readFile(file, done) {
     }
     rawFile.send(null);
 }
+
+
+// function showAlert(message) {
+//     alert(message);
+// }
+
+// function checkUsername(username){
+//     if (username.length < 5)
+//     return false;
+//     else
+//     return true;
+// }
+
+// function checkPassword(password){
+//     if (password.length < 5)
+//     return false;
+//     else
+//     return true;
+// }
