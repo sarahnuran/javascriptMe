@@ -77,7 +77,7 @@ window.onload = function() {
                     alert("You have entered an invalid email address!");
                     // return (false);
                 }
-                console.log(logIn)
+                // console.log(logIn)
                    
 
             const mdp = inputs[1].value;
@@ -87,17 +87,30 @@ window.onload = function() {
                     alert("Password Should contain atleast 8 characters, One Number, One UpperCase and a lowercase letter");   
                     // return (false);  
                 }
-                console.log(mdp);
+                // console.log(mdp);
 
                 var user = localStorage.getItem("user");
                 user = JSON.parse(user);
-                if (user.email == logIn && user.password == mdp){
-                    window.location.href="home.html"
-                }
-                console.log(user);
+                if (user === null) {
+                    alert("Account does not exist, please register.");
+                    // return false;
+                
+                  } else if(logIn !== user.email){
+                        alert("Wrong email.")
+                        // return false;
+                    } else {
+                        // (user.email == logIn && user.password == mdp){
+                    window.location.href="home.html";
+                } 
+
+                    
+                  })
+                  
+                  
+                
+                // console.log(user);
 
                           
-        })
             
 
         // 2eme recup
@@ -137,7 +150,7 @@ window.onload = function() {
                 }
                 console.log(secondmdp);
 
-               
+            //    if(error == false){}
                 var user = new User(username, email, mdp);
                 localStorage.setItem("user", JSON.stringify(user));
 
