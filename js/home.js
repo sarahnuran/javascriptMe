@@ -23,7 +23,67 @@ window.onload = function() {
             // 1.2 DEFINIR DES GETTER/SETTER POUR CHAQUE PROPRIETES DE LA CLASS Article
                 // exemple : this.SetTitle = function(newTitle) { this.title = newTitle; } <----- ceci est un SETTER
 
-
+                class Articles {
+                    constructor (id, title, author, publishedDate, img, content, resumes) {
+                        this.id = id;
+                        this.title = title;
+                        this.author = author;
+                        this.publishedDate = publishedDate;
+                        this.img = img;
+                        this.content = content;
+                        this.resumes = resumes;
+                    }
+                
+                    getId() {
+                        return this.id;
+                    }
+                    setId (newId) {
+                        this.id = newId;
+                    }
+                
+                    getTitle() {
+                        return this.title;
+                    }
+                    setTitle (newTitle) { 
+                        this.title = newTitle;
+                    }
+                
+                    getAuthor() {
+                        return this.author;
+                    }
+                    setAuthor (newAuthor) { 
+                        this.author = newAuthor;
+                    }
+                
+                    getPublishedDate() {
+                        return this.publishedDate;
+                    }
+                    setPublishedDate (newPublishedDate) { 
+                        this.publishedDate = newPublishedDate;
+                    }
+                
+                    getImg() {
+                        return this.img;
+                    }
+                    setImg (newImg) { 
+                        this.img = newImg;
+                    }
+                
+                    getContent() {
+                        return this.content;
+                    }
+                    setContent (newContent) { 
+                        this.content = newContent;
+                    }
+                
+                    getResumes() {
+                        return this.resumes;
+                    }
+                    setResumes (newResumes) { 
+                        this.resumes = newResumes;
+                    }
+                }
+                
 
 
 
@@ -58,6 +118,54 @@ window.onload = function() {
                      // articleBloc.append(articleTitle);
                      // etc.....
 
+                     for (let i = 0; i < articles.length; i++) {
+                        const article = new Articles (articles[i].id, articles[i].title, articles[i].author, articles[i].publishedDate, articles[i].img, articles[i].content, articles[i].resumes);
+                        const section = document.getElementsByTagName("section")[0];
+                        const articleBloc = document.createElement("article");
+                        articleBloc.classList.add("article-preview");
+                        articleBloc.setAttribute("data-id", article.getId());
+                        section.appendChild(articleBloc);
+            
+                        const articleTitle = document.createElement("h2");
+                        articleTitle.innerText = article.getTitle();
+                        articleBloc.appendChild(articleTitle);
+            
+                        const articleBody = document.createElement("div");
+                        articleBody.classList.add("article-preview-body");
+                        articleBloc.appendChild(articleBody);
+            
+                        const articleImg = document.createElement("div");
+                        articleImg.classList.add("article-preview-img");
+                        articleBody.appendChild(articleImg);
+            
+                        const img = document.createElement("img");
+                        img.setAttribute("alt", "miniature article " + article.getId());
+                        img.setAttribute("src", article.getImg());
+                        articleImg.appendChild(img);
+            
+                        const articleContent = document.createElement("div");
+                        articleContent.classList.add("article-preview-content");
+                        articleBody.appendChild(articleContent);
+            
+                        const content = document.createElement("p");
+                        content.innerText = article.getResumes();
+                        articleContent.appendChild(content);
+            
+                        const articleTags = document.createElement("div");
+                        articleTags.classList.add("article-preview-tags");
+                        articleBody.appendChild(articleTags);
+            
+                        const tags = document.createElement("p");
+                        tags.innerText = "tag1 tag2 tagada";
+                        articleTags.appendChild(tags);
+                    
+                        articleBloc.addEventListener("click", function(){
+                            window.location.href = "article.html?id=" + article.getId();
+                       })
+           
+                   }
+               });
+           }            
 
 
 
@@ -71,6 +179,3 @@ window.onload = function() {
 
 
 
-
-    });
-}
