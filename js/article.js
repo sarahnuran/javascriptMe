@@ -1,5 +1,6 @@
-window.onload = function() {readFile('https://raw.githubusercontent.com/promo3Saint-Maur/files/master/articles.json', function(articles) {
-
+window.onload = function() {
+    readFile('https://raw.githubusercontent.com/promo3Saint-Maur/files/master/articles.json', function(articles) { 
+        
     // VOUS Y ETES PRESQUE !!!
 
     // ------------- FINAL STEP -----------------

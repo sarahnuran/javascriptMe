@@ -17,7 +17,6 @@ function readFile(file, done) {
     rawFile.send(null);
 }
 
-
 // function showAlert(message) {
 //     alert(message);
 // }

@@ -121,6 +121,9 @@ window.onload = function() {
                        
                       // j'ai ciblé la section
                     const section = document.getElementsByTagName("section")[0];
+                    section.style.display = "flex";
+                    section.style.flexDirection = "column";
+                    section.style.flexWrap = "wrap";
                      for (let i = 0; i < articles.length; i++) {
                         const article = new Articles (articles[i].id, articles[i].title, articles[i].author, articles[i].publishedDate, articles[i].img, articles[i].content, articles[i].resumes);
 
@@ -177,7 +180,7 @@ window.onload = function() {
 
 
                         articleBloc.addEventListener("click", function(){
-                            window.location.href = "article.html?id=1";
+                            window.location.href = "article.html?id=";
                         })
                         
             
