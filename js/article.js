@@ -3,6 +3,29 @@ window.onload = function() {
         
     // VOUS Y ETES PRESQUE !!!
 
+    // let params = (new URL(document.location)).searchParams;
+    // let id = parseInt(params.get('id'));
+    // for (let i = 0; i < articles.length ; i++) {
+        function readTextFile(file) {
+            var rawFile = new XMLHttpRequest(); 
+            rawFile.open("GET", file, false); 
+            rawFile.onreadystatechange = function ()
+            {
+                if(rawFile.readyState === 4) 
+                {
+                    if(rawFile.status === 200) 
+                    {
+                        var id = rawFile.responseText; 
+                        console.log(id);
+                    }
+                }
+            }
+            rawFile.send(null); 
+        }
+        
+
+
+    
     // ------------- FINAL STEP -----------------
         // A PARTIR DU PARAMETRE 'ID' PRESENT DANS L'URL :
             // 1. Récupérer l'article correspondant à partir du fichier 'JSON'
@@ -17,4 +40,4 @@ window.onload = function() {
 
 
 
-})}
+    })}
